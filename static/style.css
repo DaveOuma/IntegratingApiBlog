@@ -1,7 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand");
+
 body {
-  background: #1e81b0
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Gochi Hand", cursive;
+  justify-content: center;
+  text-align: center;
+  font-size: 130%;
 }
-img {
-  width: 50px
+
+.card-img {
+  width: 100%;
   height: auto;
 }
+
+.card-container {
+  display: flex; 
+  flex-direction: left; 
+  padding: 20px;
+  margin: 30px;
+}
+
+.card:nth-child(odd) {
+  transform: perspective(1000px) rotateY(10deg); /* Apply skew transformation for odd-indexed cards */
+}
+
+.card:nth-child(even) {
+  transform: perspective(1000px) rotateY(-10deg); /* Apply skew transformation for even-indexed cards */
+}
+
+.card {
+  margin-bottom: 20px; 
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(249, 249, 249, 0.8); /* Set default transparent background */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Add smooth transition effect */
+  opacity: 0.8; /* Set default opacity */
+  margin-right: 30px;
+  overflow: hidden;
+  transform: perspective(1000px) rotateY(10deg);
+  
+}
+
+.card:hover {
+  background-color: #f9f9f9; /* Set solid background color on hover */
+  opacity: 1; /* Set full opacity on hover */
+  transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.refresh-btn {
+  background-color: #007bff;
+  border: none; 
+  color: white; 
+  padding: 10px 20px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 16px; 
+  margin: 10px 0; 
+  cursor: pointer; 
+  border-radius: 15px; 
+  box-shadow: 0 2px 0 #2e2e2e;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: rotate(4deg);
+  font-family: "Gochi Hand", cursive;
+  transform-origin: center;
+}
+
+.refresh-btn span{
+  background: #f1f5f8;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #494a4b;
+}
+
+.refresh-btn:active, .refresh-btn:focus{
+  transform: translateY(4px);
+  padding-bottom: 0px;
+  outline: 0;
+}
+
+.refresh-btn:hover {
+  background-color: #0056b3; 
+}
+
+#home-heading {
+  font-size: 50px;
+}
+
+.animate-text {
+  animation: fadeIn 1s ease forwards, bounce 1s ease forwards;;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Start opacity */
+  }
+  to {
+      opacity: 1; /* End opacity */
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0); /* Start and end position */
+  }
+  50% {
+      transform: translateY(-20px); /* Midway position */
+  }
+}
+
+.home-btn {
+  display: block; 
+  width: 200px; 
+  margin: 20px auto; 
+  padding: 10px 20px; 
+  background-color: #007bff; 
+  color: #fff; 
+  text-align: center; 
+  text-decoration: none; 
+  border: none; 
+  border-radius: 15px; 
+  cursor: pointer;
+  transition: background-color 0.3s; 
+  box-shadow: 0 2px 0 #2e2e2e;
+  transform: rotate(4deg);
+  font-family: "Gochi Hand", cursive;
+  transform-origin: center;
+  transition: transform 0.5s;
+}
+
+.home-btn span{
+  background: #f1f5f8;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #494a4b;
+}
+
+.home-btn:active, .home-btn:focus{
+  transform: translateY(4px);
+  padding-bottom: 0px;
+  outline: 0;
+}
+
+.home-btn:hover {
+  background-color: #0056b3; 
+  transform: perspective(1000px) rotateY(180deg);
+}
+
+
+
