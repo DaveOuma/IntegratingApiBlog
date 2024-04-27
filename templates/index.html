@@ -1,33 +1,60 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Welcome to Random Apis Blog</title>
     <meta name="description" content="description"/>
     <meta name="author" content="author" />
     <meta name="keywords" content="keywords" />
     
-    <link rel="stylesheet" href=" {% static 'style.css' %}" />
-    
-    <style type="text/css">.body { width: auto; }</style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=font1|font2|etc"
-      type="text/css"
-    />
-  </head>
-  <body>
-<h1>Welcome to Random Facts and Images</h1>
-    <h1>Random Events</h1>
-    <p> {{events}}</p>
-   
-    <h1>Are You Bored?</h1>
-    <p> {{activity}}</p>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
-    <h1>Random Dog Breeds?</h1>
-    <img src="{{ dog }}" alt="Random Dog Image">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <h1>Random Facts and Images</h1>
+    <!-- Refresh button -->
+    <button class="btn btn-primary refresh-btn" id="refresh-btn">Reload</button>
     
-  </body>
+    <!-- Card container -->
+    <div class="card-container">
+        <!-- Random GitHub events card -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h3 class="card-title"><i class="fas fa-random"></i>Random GitHub Events</h3>
+                <ul>
+                  {% if random_event %}
+                  <p>Full Event Name:</p>
+                  <a href="{{ random_event.url }}" target="_blank">{{ random_event.name }}</a>
+                  {% else %}
+                  <p>No random event available</p>
+                  {% endif %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Are You Bored? card -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h3 class="card-title"><i class="fas fa-smile"></i>Are you Bored?</h3>
+                <p class="card-text">{{ activity }}</p>
+            </div>
+        </div>
+
+        <!-- Random Dog Breeds card -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h3 class="card-title"><i class="fas fa-dog"></i>Here are Random Dog Breeds</h3>
+                <img class="card-img card-img-top" src="{{ dog_image_url }}" alt="Random Dog Image">
+                <p class="card-text">{{ breed_name }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Include the JavaScript file -->
+    <script src="{% static 'script.js' %}"></script>
+</body>
 </html>
