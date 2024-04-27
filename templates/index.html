@@ -16,18 +16,28 @@
       href="//fonts.googleapis.com/css?family=font1|font2|etc"
       type="text/css"
     />
+    <script src="https://cdn.tailwindcss.com">  </script>
+    <title>PLP Hackathon</title>
   </head>
   <body>
-<h1>Welcome to Random Facts and Images</h1>
-    <h1>Random Events</h1>
-    <p> {{events}}</p>
-   
-    <h1>Are You Bored?</h1>
-    <p> {{activity}}</p>
-
-    
-    <h1>Random Dog Breeds?</h1>
-    <img src="{{ dog }}" alt="Random Dog Image">
-    
+    <div class="m-auto p-2 w-full max-w-screen-xl">
+      <h1 class="text-3xl font-bold underline p-4">Welcome to Random Apis Blog</h1>
+      <p class="p-2">
+        This is a blog for all the random events and activities that I have generated.
+        Let's start with events.
+      </p>
+      <div class="p-2">
+        <h2 class="text-xl font-bold">Random events</h2>
+        <p class="bg-yellow-500 rounded">{{events}}</p>
+      </div>
+      <div class="p-2">
+        <h2>Let's plug in some random dog images first so the whole thing isn't boring</h2>
+        <p><img src="{{dog}}" alt="Maybe later"</p>
+      </div>
+      <div class="p-2">
+        <h2>What about actities? What's your mood? Fine i'll guess.</h2>
+        <p>{{activity}}</p>
+      </div>
+    </div>  
   </body>
 </html>
